@@ -2,13 +2,13 @@
 
 #define GPIOA_ODR (*(volatile uint32_t *) 0x40020014)
 #define RCC_AHB1ENR (*(volatile uint32_t *) 0x40023830)
-#define GPIOA_MODER (*(volatile uint32_t *) 0x48000000)
+#define GPIOA_MODER (*(volatile uint32_t *) 0x40020000)
 
 
 int main(void)
 {
 	RCC_AHB1ENR |= (1<<0); 		// Enable Clock GPIOA 	(RCC->AHB1ENR)
-	GPIOA_MODER &= ~(3<<(5*2));// PA5 Output			(GPIOA->MODER)
+	// PA5 Output			(GPIOA->MODER)
 	GPIOA_MODER |= (1<<10);
 	
 	while(1){

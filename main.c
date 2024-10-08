@@ -12,10 +12,9 @@ int main(void)
 	GPIOA_MODER &= ~(1<<11);
 	
 	while(1){
-		for(uint32_t i = 0 ; i<100000; i++){
+		for(uint32_t i = 0 ; i<100000; i++){}
 		GPIOA_ODR ^= (1<<5);	// Toggle PA5		(GPIOA->ODR)	
 		//delay(1000);
-		}
 	}
 }
 

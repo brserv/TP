@@ -5,14 +5,9 @@
 #define GPIOA_MODER (*(volatile uint32_t *) 0x48000000)
 
 
-/*uint32_t* const GPIOA_ODR = 0x40020014;
-uint32_t* const RCC_AHB1ENR = 0x40023830;
-uint32_t* const GPIOA_MODER = 0x48000000;
-*/
-
 int main(void)
 {
-	RCC_AHB1ENR |= (1<<5); 		// Enable Clock GPIOA 	(RCC->AHB1ENR)
+	RCC_AHB1ENR |= (1<<0); 		// Enable Clock GPIOA 	(RCC->AHB1ENR)
 	GPIOA_MODER |= (1<<10);// PA5 Output			(GPIOA->MODER)
 
 	while(1){
